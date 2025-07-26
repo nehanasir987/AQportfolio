@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Advertising Agency | Facebook Ads Experts</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-dark:#1877F2;
+      --primary-accent: #00aaff;
+      --gray-bg: #f0f0f0;
+      --gray-text: #555;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #222;
+    }
+    #contact {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Same as experience section */
+  color: #ffffff;
+  padding: 100px 20px;
+}
+
+#contact h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+#contact textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #cccccc;
+}
+
+#contact textarea:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  outline: none;
+  box-shadow: 0 0 0 2px #00ffc8;
+}
+
+#contact .btn-primary {
+  background-color: #00ffc8;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+  background-color: #00dab1;
+}
+
+    .pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle default shadow */
+  border: 1px solid #eee; /* Light border for structure */
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(24, 119, 242, 0.25); /* Deeper hover shadow with FB blue tint */
+  border: 1px solid #1877F2;
+  background-color: #E7F3FF; /* Optional light FB-blue background */
+}
+.experience-section {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Gradient background */
+  color: #fff;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.stat:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.stat .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.stat .count {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #00ffc8;
+}
+
+.plus {
+  font-size: 2rem;
+  color: #00ffc8;
+}
+
+.stat p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+.summary {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 40px auto 0;
+  line-height: 1.7;
+  color: #dddddd;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+    h1, h2 {
+      font-weight: bold;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    nav.navbar {
+      background-color: var(--primary-dark);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .nav-link {
+      color: white !important;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--primary-accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+.hero {
+  position: relative;
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  color: white;
+  background-color: #2c2c2c;/* fallback in case image fails */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+    .sample-posts img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .sample-posts img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .service {
+      background-color: #f0f4ff;
+      padding: 20px;
+      border-left: 5px solid var(--primary-accent);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .service:hover {
+      background-color: #e6f0ff;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+    }
+
+    .experience {
+      background-color: #e9ecef;
+      padding: 20px;
+      border-left: 5px solid var(--primary-dark);
+      border-radius: 8px;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid var(--primary-accent);
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    blockquote:hover {
+      background-color: #eef7ff;
+    }
+
+    footer {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+       <img src="images/imi6.png" alt="Sample Post 1" class="img-fluid">
+
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#samples">Samples</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clients">Client Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero"  class="hero-bg" alt="Background Image">
+  
+
+  <div class="container">
+    <h1>Grow Your Brand with Facebook Ads</h1>
+    
+   <p class="lead" style="font-weight: 600;">
+  We help businesses grow by leveraging industry-proven advertising strategies that are driven by data, tailored for your goals, and focused on maximizing ROI at every step.
+</p>
+
+  </div>
+</section>
+
+
+  <!-- About -->
+  <section id="about" class="py-5" >
+    <div class="container text-center">
+      <h2>About The Advertising Agency</h2>
+      <p>We are a specialized Facebook Ads agency helping businesses grow leads and sales online. Whether you're an eCommerce brand, service provider, or local business — we craft campaigns that convert and scale.</p>
+    </div>
+  </section>
+
+  <!-- Samples -->
+  <section id="samples" class="py-5 ">
+    <div class="container text-center">
+      <h2>Post Samples</h2>
+      <p>Below are examples of ad creatives we've designed for our clients:</p>
+      <div class="row sample-posts justify-content-center">
+        <div class="col-md-4 mb-4">
+        <img src="images/imi3.png" alt="Sample Post 1" class="img-fluid">
+
+        </div>
+        <div class="col-md-4 mb-4">
+         <img src="images/imi4.jpg" alt="Sample Post 1" class="img-fluid">
+
+        </div>
+         <div class="col-md-4 mb-4">
+         <img src="images/imi5.png" alt="Sample Post 1" class="img-fluid">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5">
+    <div class="container text-center">
+      <h2>Our Services</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="service">🎯 Facebook Ads Campaigns</div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service">📈 Lead Generation Funnels</div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service">👥 Retargeting Audiences</div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="service">📊 Analytics & ROI Tracking</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Pricing Section -->
+<section id="pricing" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4 fw-bold">Ad Campaign Pricing</h2>
+    <p class="mb-5 text-muted">Choose a plan that suits your advertising goals. All packages include strategy, ad creation, and performance monitoring.</p>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Pricing Cards -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="pricing-card shadow-sm p-4 rounded h-100 bg-white transition">
+          <h5 class="fw-semibold">1 Day</h5>
+          <h3 class="text-primary">Rs. 700</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="pricing-card shadow-sm p-4 rounded h-100 bg-white transition">
+          <h5 class="fw-semibold">3 Days</h5>
+          <h3 class="text-primary">Rs. 2,100</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="pricing-card shadow-sm p-4 rounded h-100 bg-white transition">
+          <h5 class="fw-semibold">5 Days</h5>
+          <h3 class="text-primary">Rs. 3,500</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="pricing-card shadow-sm p-4 rounded h-100 bg-white transition">
+          <h5 class="fw-semibold">7 Days</h5>
+          <h3 class="text-primary">Rs. 4,900</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="pricing-card shadow-sm p-4 rounded h-100 bg-white transition">
+          <h5 class="fw-semibold">15 Days</h5>
+          <h3 class="text-primary">Rs. 10,500</h3>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="pricing-card shadow-sm p-4 rounded h-100 bg-white transition">
+          <h5 class="fw-semibold">30 Days</h5>
+          <h3 class="text-primary">Rs. 21,000</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Breakdown Section -->
+    <div class="mt-5 text-start mx-auto fs-5" style="max-width: 600px; ">
+  <h5 class="fw-bold mb-3 fs-3">What's Included in the Pricing</h5>
+
+      <ul class="text-muted ps-3">
+        <li><strong>50% Ad Spend:</strong> This is allocated directly to Meta (Facebook & Instagram) platforms for audience reach and engagement.</li>
+        <li><strong>35% Facebook Tax:</strong> This is deducted as per Facebook's regional taxation policies and billing system.</li>
+        <li><strong>15% Service Fee:</strong> Our fee for strategy planning, creative design, campaign setup, and performance optimization.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Experience with Animated Counter -->
+ <section id="experience" class="experience-section py-5">
+  <div class="container text-center">
+    <h2 class="section-title">🚀 Our Experience</h2>
+    
+    <div class="stats mt-5">
+      <div class="stat fade-in">
+        <div class="icon">🧠</div>
+        <span class="count" data-target="3">0</span><span class="plus">+</span>
+        <p>Years of Facebook Ads Experience</p>
+      </div>
+      
+      <div class="stat fade-in">
+        <div class="icon">📈</div>
+        <span class="count" data-target="200">0</span><span class="plus">+</span>
+        <p>Successful Campaigns Run</p>
+      </div>
+    </div>
+    
+    <p class="summary mt-4 fade-in">
+      Our team has consistently delivered results through data-driven campaigns, helping businesses grow smarter and faster.
+    </p>
+  </div>
+</section>
+
+
+  <!-- Client Results -->
+  <section id="clients" class="py-5">
+    <div class="container text-center">
+      <h2>Client Results & Feedback</h2>
+      <blockquote>“We got 350+ leads in just 3 weeks. Amazing work by The Advertising Agency!” – Ali, Real Estate</blockquote>
+      <blockquote>“Very responsive and professional. They know what works in Facebook Ads.” – Sana, Online Boutique</blockquote>
+      <blockquote>“Highly recommend! The ROI from our ads tripled.” – Raza, Local Gym Owner</blockquote>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <form class="mx-auto" style="max-width: 600px;">
+        <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-3" placeholder="Your Email" required>
+        <textarea class="form-control mb-3" rows="5" placeholder="Tell us about your business..."></textarea>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 The Advertising Agency | Facebook Ads Experts</p>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+  let hasCounted = false;
+  const counters = document.querySelectorAll('.count');
+  const stats = document.querySelectorAll('.fade-in');
+
+  function runCounters() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const update = () => {
+        const current = +counter.innerText;
+        const increment = target / 100;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(update, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    });
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasCounted) {
+        runCounters();
+        stats.forEach(el => el.classList.add('show'));
+        hasCounted = true;
+      }
+    });
+  }, {
+    threshold: 0.4
+  });
+
+  const experienceSection = document.querySelector('#experience');
+  observer.observe(experienceSection);
+</script>
+</body>
